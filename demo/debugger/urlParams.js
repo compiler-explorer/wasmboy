@@ -16,7 +16,9 @@ export function handleURLParams() {
     try {
       // Decode base64 ROM data
       const base64 = romData;
+      console.log('going to run atob');
       const binaryString = atob(base64);
+      console.log('finished atob');
       const bytes = new Uint8Array(binaryString.length);
       for (let i = 0; i < binaryString.length; i++) {
         bytes[i] = binaryString.charCodeAt(i);
