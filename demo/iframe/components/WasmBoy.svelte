@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import {isStarted, isLoaded, isPlaying, romUrl, romName, saveState, setStatus} from '../stores.js';
+  import {isStarted, isLoaded, isPlaying, romUrl, romName, romData, saveState, setStatus} from '../stores.js';
   import {WasmBoy} from '../../../dist/wasmboy.wasm.esm.js';
 
   let mountResolve;
@@ -40,7 +40,23 @@
 
     await WasmBoy.setCanvas(wasmBoyCanvas);
     WasmBoy.addPlugin(EmbedPlugin);
-    await WasmBoy.loadROM($romUrl);
+    
+    // Load ROM from either base64 data or URL
+    if ($romData) {
+      // Decode base64 ROM data
+      const base64 = $romData;
+      const binaryString = atob(base64);
+      const bytes = new Uint8Array(binaryString.length);
+      for (let i = 0; i < binaryString.length; i++) {
+        bytes[i] = binaryString.charCodeAt(i);
+      }
+      await WasmBoy.loadROM(bytes);
+    } else if ($romUrl) {
+      await WasmBoy.loadROM($romUrl);
+    } else {
+      throw new Error('No ROM URL or data provided');
+    }
+    
     await WasmBoy.play();
 
     canvasStyle = 'display: block';
