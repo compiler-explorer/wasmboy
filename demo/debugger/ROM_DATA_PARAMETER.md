@@ -7,13 +7,13 @@ The WasmBoy debugger now supports loading ROMs via URL parameters, including bas
 ### Loading ROM from base64 data (recommended):
 
 ```
-https://wasmboy.compiler-explorer.com/#rom-data=<base64-encoded-rom>&rom-name=<optional-name>
+https://static.ce-cdn.net/wasmboy/index.html#rom-data=<base64-encoded-rom>&rom-name=<optional-name>
 ```
 
 ### Loading ROM from URL:
 
 ```
-https://wasmboy.compiler-explorer.com/#rom-url=<url-to-rom>&rom-name=<optional-name>
+https://static.ce-cdn.net/wasmboy/index.html#rom-url=<url-to-rom>&rom-name=<optional-name>
 ```
 
 ## Features
