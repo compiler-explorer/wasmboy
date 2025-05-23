@@ -2,7 +2,8 @@
   import { onMount } from 'svelte';
   import {isStarted, isLoaded, isPlaying, romUrl, romName, romData, saveState, setStatus} from '../stores.js';
   import {WasmBoy} from '../../../dist/wasmboy.wasm.esm.js';
-
+  import {base64Decode} from '../../base64.js';
+  
   let mountResolve;
   let mountPromise = new Promise(resolve => {
     mountResolve = resolve;
@@ -45,8 +46,6 @@
     if ($romData) {
       // Decode base64 ROM data using viciious decoder
       const base64 = $romData;
-      // Import base64Decode dynamically
-      const { base64Decode } = await import('../../base64.js');
       const bytes = base64Decode(base64);
       await WasmBoy.loadROM(bytes);
     } else if ($romUrl) {
