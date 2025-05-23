@@ -58,3 +58,13 @@ jobs:
       - name: Run Accuracy Tests
         run: npm run test:accuracy:nobuild
         continue-on-error: true
+
+      - name: Upload to S3
+        if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+        uses: prewk/s3-cp-action@v2
+        with:
+          source: ./build
+          dest: s3://ce-cdn.net/wasmboy
+          flags: --recursive
+          aws_access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
