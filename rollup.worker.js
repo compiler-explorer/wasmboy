@@ -5,7 +5,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import json from 'rollup-plugin-json';
 import replace from 'rollup-plugin-replace';
-import compiler from '@ampproject/rollup-plugin-closure-compiler';
+// import compiler from '@ampproject/rollup-plugin-closure-compiler';
 import bundleSize from 'rollup-plugin-bundle-size';
 
 let sourcemap = true;
@@ -45,7 +45,7 @@ const plugins = [
 ];
 
 if (process.env.PROD) {
-  plugins.push(compiler());
+  // plugins.push(compiler());
 }
 plugins.push(bundleSize());
 

@@ -7,7 +7,7 @@ import typescript from 'rollup-plugin-typescript';
 import url from 'rollup-plugin-url';
 import json from 'rollup-plugin-json';
 import replace from 'rollup-plugin-replace';
-import compiler from '@ampproject/rollup-plugin-closure-compiler';
+// import compiler from '@ampproject/rollup-plugin-closure-compiler';
 import bundleSize from 'rollup-plugin-bundle-size';
 import pkg from './package.json';
 
@@ -183,7 +183,7 @@ baseLibBundles.forEach(baseLibBundle => {
     wasmBundle.plugins = [...plugins, babel(wasmBabelPluginConfig)];
 
     if (baseLibBundle.output.format !== 'cjs' && process.env.PROD) {
-      wasmBundle.plugins.push(compiler());
+      // wasmBundle.plugins.push(compiler());
     }
     wasmBundle.plugins.push(bundleSize());
 
