@@ -43,13 +43,11 @@
     
     // Load ROM from either base64 data or URL
     if ($romData) {
-      // Decode base64 ROM data
+      // Decode base64 ROM data using viciious decoder
       const base64 = $romData;
-      const binaryString = atob(base64);
-      const bytes = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
-      }
+      // Import base64Decode dynamically
+      const { base64Decode } = await import('../../base64.js');
+      const bytes = base64Decode(base64);
       await WasmBoy.loadROM(bytes);
     } else if ($romUrl) {
       await WasmBoy.loadROM($romUrl);

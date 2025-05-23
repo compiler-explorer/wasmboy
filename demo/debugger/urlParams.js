@@ -1,5 +1,6 @@
 // Handle URL parameters for loading ROMs
 import loadROM from './loadROM';
+import { base64Decode } from '../base64';
 
 export function handleURLParams() {
   // Parse both search params and hash params
@@ -7,22 +8,18 @@ export function handleURLParams() {
   const hashParams = new URLSearchParams(window.location.hash.substring(1));
 
   // Get ROM parameters (prefer hash over search for sensitive data)
-  const romData = decodeURIComponent(hashParams.get('rom-data'));
+  const romData = hashParams.get('rom-data');
   const romUrl = hashParams.get('rom-url') || searchParams.get('rom-url');
   const romName = hashParams.get('rom-name') || searchParams.get('rom-name') || 'ROM from URL';
 
   // If we have ROM data, decode and load it
   if (romData) {
     try {
-      // Decode base64 ROM data
+      // Decode base64 ROM data using viciious decoder
       const base64 = romData;
-      console.log('going to run atob');
-      const binaryString = atob(base64);
-      console.log('finished atob');
-      const bytes = new Uint8Array(binaryString.length);
-      for (let i = 0; i < binaryString.length; i++) {
-        bytes[i] = binaryString.charCodeAt(i);
-      }
+      console.log('going to run base64Decode');
+      const bytes = base64Decode(base64);
+      console.log('finished base64Decode');
 
       // Load the ROM
       console.log(`Loading ROM from URL data: ${romName}`);
