@@ -7,7 +7,7 @@ export function handleURLParams() {
   const hashParams = new URLSearchParams(window.location.hash.substring(1));
 
   // Get ROM parameters (prefer hash over search for sensitive data)
-  const romData = hashParams.get('rom-data');
+  const romData = decodeURIComponent(hashParams.get('rom-data'));
   const romUrl = hashParams.get('rom-url') || searchParams.get('rom-url');
   const romName = hashParams.get('rom-name') || searchParams.get('rom-name') || 'ROM from URL';
 
