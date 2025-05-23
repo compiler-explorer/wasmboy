@@ -164,21 +164,12 @@ export default class WidgetManager {
   }
 
   _createDefaultLayout() {
+    // Left side - Player and controls
     this.addPreactWidget({
       component: <WasmBoyPlayer />,
       label: 'Player',
       closable: false
     });
-    this.addPreactWidget(
-      {
-        component: <HelpComponent />,
-        label: 'Help'
-      },
-      {
-        mode: 'split-right',
-        refIndex: 0
-      }
-    );
     this.addPreactWidget(
       {
         component: <WasmBoyControls />,
@@ -189,14 +180,28 @@ export default class WidgetManager {
         refIndex: 0
       }
     );
+
+    // Middle - Disassembler
     this.addPreactWidget(
       {
-        component: <AboutComponent />,
-        label: 'About'
+        component: <Disassembler />,
+        label: 'Disassembler'
       },
       {
-        mode: 'split-bottom',
-        refIndex: 1
+        mode: 'split-right',
+        refIndex: 0
+      }
+    );
+
+    // Far right - CPU State
+    this.addPreactWidget(
+      {
+        component: <CpuState />,
+        label: 'CPU State'
+      },
+      {
+        mode: 'split-right',
+        refIndex: 2
       }
     );
   }

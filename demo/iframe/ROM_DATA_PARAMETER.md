@@ -5,7 +5,7 @@ This feature allows passing ROM data directly via URL hash parameters, enabling 
 ## URL Format
 
 ```
-https://wasmboy.app/iframe/#rom-data=<base64-encoded-rom>&rom-name=<optional-name>
+https://wasmboy.compiler-explorer.com/iframe/#rom-data=<base64-encoded-rom>&rom-name=<optional-name>
 ```
 
 ## Implementation Details
@@ -28,7 +28,7 @@ for (let i = 0; i < romBytes.length; i += 0x8000) {
 const base64 = btoa(binary);
 
 // Create shareable URL
-const url = `https://wasmboy.app/iframe/#rom-data=${encodeURIComponent(base64)}&rom-name=MyGame.gb`;
+const url = `https://wasmboy.compiler-explorer.com/iframe/#rom-data=${encodeURIComponent(base64)}&rom-name=MyGame.gb`;
 ```
 
 ## Benefits

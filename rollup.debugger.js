@@ -121,11 +121,12 @@ const debuggerBundles = [
       file: 'build/index.iife.js',
       format: 'iife',
       globals: {
-        crypto: 'crypto'
+        crypto: 'crypto',
+        util: 'util'
       },
       sourcemap: sourcemap
     },
-    external: ['crypto'],
+    external: ['crypto', 'util'],
     context: 'window',
     plugins: plugins,
     sourcemap: true

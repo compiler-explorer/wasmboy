@@ -20,6 +20,8 @@ import { PUBX_KEYS, PUBX_INITIALIZE } from './pubx.config';
 import Overlay from './components/overlay/overlay';
 import Mobile from './components/mobile/mobile';
 
+import { handleURLParams } from './urlParams';
+
 // Setup from:
 // https://github.com/phosphorjs/phosphor/blob/master/examples/example-dockpanel/src/index.ts
 
@@ -131,3 +133,9 @@ window.addEventListener('orientationchange', () => {
     layoutChangeThrottle = undefined;
   }, 500);
 });
+
+// Handle URL parameters for loading ROMs
+// Wait a bit for everything to initialize
+setTimeout(() => {
+  handleURLParams();
+}, 500);

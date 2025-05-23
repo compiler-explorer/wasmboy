@@ -68,11 +68,11 @@
 /*NOTE: Height MUST be kept in sync with this.rowHeight, see renderRow()*/
 :root {
   --virtual-list-widget-height: 350px;
-  --virtual-list-widget-row-height: 30px;
-  --virtual-list-widget-column-spacing: 5px;
+  --virtual-list-widget-row-height: 20px;
+  --virtual-list-widget-column-spacing: 3px;
   --virtual-list-widget-column-border: 1px solid black;
 
-  --virtual-list-widget-hex-width: 75px;
+  --virtual-list-widget-hex-width: 60px;
 }
 
 .virtual-list-widget__header-list {

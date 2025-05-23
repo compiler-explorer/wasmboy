@@ -67,18 +67,31 @@ export default class ValueTable extends Component {
   render() {
     if (!this.state.object || Object.keys(this.state.object).length < 1) {
       return (
-        <div className="value-table-container">
-          <h1>{this.state.title}</h1>
-          <div>Please open a ROM to view the state values.</div>
+        <div className={this.state.className || ''}>
+          <div className="value-table-container">
+            <h1>{this.state.title}</h1>
+            <div>Please open a ROM to view the state values.</div>
+          </div>
         </div>
       );
     }
 
     const keyRows = [];
     Object.keys(this.state.object).forEach(objectKey => {
+      // Define tooltips for abbreviated labels
+      const tooltips = {
+        PC: 'Program Counter',
+        SP: 'Stack Pointer'
+      };
+
+      const thProps = {};
+      if (tooltips[objectKey]) {
+        thProps.title = tooltips[objectKey];
+      }
+
       keyRows.push(
         <tr>
-          <th>{objectKey}</th>
+          <th {...thProps}>{objectKey}</th>
           <td>0x{this.getValueWithBase(this.state.object[objectKey], 16)}</td>
           <td>{this.getValueWithBase(this.state.object[objectKey], 2)}</td>
           <td>{this.getValueWithBase(this.state.object[objectKey], 10)}</td>
@@ -87,19 +100,21 @@ export default class ValueTable extends Component {
     });
 
     return (
-      <div className="value-table-container">
-        <h1>{this.state.title}</h1>
-        {this.state.headerElement}
-        <table className="value-table">
-          <tr>
-            <th>Value</th>
-            <td>Hexadecimal:</td>
-            <td>Binary:</td>
-            <td>Decimal:</td>
-          </tr>
+      <div className={this.state.className || ''}>
+        <div className="value-table-container">
+          <h1>{this.state.title}</h1>
+          {this.state.headerElement}
+          <table className="value-table">
+            <tr>
+              <th>Value</th>
+              <td>Hexadecimal:</td>
+              <td>Binary:</td>
+              <td>Decimal:</td>
+            </tr>
 
-          {keyRows}
-        </table>
+            {keyRows}
+          </table>
+        </div>
       </div>
     );
   }

@@ -185,7 +185,6 @@ export default class Disassembler extends Component {
   stepOpcode() {
     stepOpcode();
     this.update();
-    Pubx.get(PUBX_KEYS.NOTIFICATION).showNotification('Stepped Opcode! 😄');
   }
 
   runNumberOfOpcodes(value) {
@@ -209,7 +208,6 @@ export default class Disassembler extends Component {
 
     const runOpcodesPromise = runNumberOfOpcodes(numberOfOpcodes);
     runOpcodesPromise.then(() => {
-      Pubx.get(PUBX_KEYS.NOTIFICATION).showNotification(`Ran ${numberOfOpcodes} opcodes! 😄`);
       this.update();
       this.setState({
         running: false

@@ -19,6 +19,11 @@ body {
   overflow: hidden;
 }
 
+h1 {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
 #phosphor-container {
   display: flex;
   z-index: 0;
@@ -76,7 +81,7 @@ body {
   min-height: 50px;
   display: flex;
   flex-direction: column;
-  padding: 8px;
+  padding: 0px;
   border: 1px solid #c0c0c0;
   border-top: none;
   background: white;
@@ -92,7 +97,7 @@ body {
   border: 1px solid #020202;
   overflow: auto;
   height: 100%;
-  padding: 10px;
+  padding: 5px;
 }
 
 /* Force scrollbars on widgets: http://simurai.com/blog/2011/07/26/webkit-scrollbar */
