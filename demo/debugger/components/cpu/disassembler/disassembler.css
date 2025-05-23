@@ -1,4 +1,6 @@
 .disassembler {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.8em;
 }
 
 .disassembler__container {
@@ -10,8 +12,8 @@
 /* Variables for our psuedo table */
 :root {
   --disassembler-width: 450px;
-  --disassembler-actions-width: 75px;
-  --disassembler-hex-width: 75px;
+  --disassembler-actions-width: 60px;
+  --disassembler-hex-width: 60px;
   --disassembler-mnemonic-width: 75px;
 }
 

@@ -39,11 +39,15 @@ export const setStatus = (message, timeout) => {
   }
 };
 
-// Get our search params
-const params = new URLSearchParams(document.location.search.substring(1));
-export const playPoster = writable(params.get('play-poster'));
-export const romUrl = writable(params.get('rom-url'));
-export const romName = writable(params.get('rom-name'));
+// Get our search params and hash params
+const searchParams = new URLSearchParams(document.location.search.substring(1));
+const hashParams = new URLSearchParams(document.location.hash.substring(1));
+
+// Prefer hash params over search params for sensitive data
+export const playPoster = writable(searchParams.get('play-poster'));
+export const romUrl = writable(hashParams.get('rom-url') || searchParams.get('rom-url'));
+export const romName = writable(hashParams.get('rom-name') || searchParams.get('rom-name'));
+export const romData = writable(hashParams.get('rom-data')); // Base64-encoded ROM data
 
 // Handle showing and hiding the mobile controls
 const isUserAgentMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);

@@ -20,6 +20,14 @@
     <div id="mobile-container"></div>
     <div id="overlay-container"></div>
 
+    <script type="text/javascript">
+      // Minimal util polyfill for browser
+      window.util = window.util || {
+        inspect: function(obj) {
+          return JSON.stringify(obj);
+        }
+      };
+    </script>
     <script type="text/javascript" src="<%BUNDLE%>"></script>
   </body>
 </html>

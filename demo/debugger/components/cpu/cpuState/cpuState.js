@@ -10,6 +10,7 @@ export default class CpuState extends ValueTable {
     super();
 
     this.state.title = 'CPU';
+    this.state.className = 'cpu-state';
   }
 
   intervalUpdate() {
@@ -21,7 +22,7 @@ export default class CpuState extends ValueTable {
       const valueTable = {};
 
       // Update CPU valueTable
-      valueTable['Program Counter (PC)'] = await WasmBoy._runWasmExport('getProgramCounter');
+      valueTable['PC'] = await WasmBoy._runWasmExport('getProgramCounter');
       valueTable['Opcode at PC'] = await WasmBoy._runWasmExport('getOpcodeAtProgramCounter');
       valueTable['Stack Pointer'] = await WasmBoy._runWasmExport('getStackPointer');
       valueTable['Register A'] = await WasmBoy._runWasmExport('getRegisterA');

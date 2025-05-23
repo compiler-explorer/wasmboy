@@ -7,16 +7,16 @@ export default class HelpComponent extends Component {
     return (
       <div class="help">
         <h1>Help</h1>
+        <h2>Compiler Explorer Fork</h2>
+        <div>
+          This is a fork of WasmBoy maintained by Compiler Explorer for displaying Game Boy compiler output. ROMs are loaded automatically
+          from URL parameters. The Open menu has been disabled to prevent confusion.
+        </div>
         <h2>How do I use this Debugger</h2>
         <div>
-          Please see the video below on how to open a ROM, open widgets, and move around tabs. Widgets can also be resiezed, by hovering
-          over their edges, and stretching to the desired size. All open widgets, and layout configurations are saved in localStorage, and
-          are preserved between sessions.
-          <div class="help__media-container">
-            <video autoplay loop muted playsinline>
-              <source src="assets/debuggerWalkthrough.mp4" type="video/mp4" />
-            </video>
-          </div>
+          Widgets can be opened from the Widgets menu above. You can move tabs by dragging them, and resize widgets by hovering over their
+          edges and stretching to the desired size. All open widgets and layout configurations are saved in localStorage and are preserved
+          between sessions.
         </div>
         <h2>Hotkeys</h2>
         <div>
@@ -31,9 +31,13 @@ export default class HelpComponent extends Component {
         </div>
         <h2>How to report bugs / suggestions</h2>
         <div>
-          Please feel free to file any bugs, suggestions, issues, etc.. At the{' '}
+          For issues specific to this Compiler Explorer fork, please file them at the{' '}
+          <a href="https://github.com/compiler-explorer/wasmboy/issues" target="_blank">
+            Compiler Explorer WasmBoy fork
+          </a>
+          . For general WasmBoy issues, please use the{' '}
           <a href="https://github.com/torch2424/wasmBoy/issues" target="_blank">
-            WasmBoy Github repo
+            original WasmBoy repository
           </a>
           .
         </div>

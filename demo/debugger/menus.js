@@ -22,11 +22,11 @@ const addCommandsToMenu = (commands, menu) => {
   });
 };
 
-// Open
-let openMenu = new phosphorWidgets.Menu({ commands });
-openMenu.title.label = 'Open';
-addCommandsToMenu(openCommands, openMenu);
-menus.push(openMenu);
+// Open - Hidden for Compiler Explorer fork
+// let openMenu = new phosphorWidgets.Menu({ commands });
+// openMenu.title.label = 'Open';
+// addCommandsToMenu(openCommands, openMenu);
+// menus.push(openMenu);
 
 // Widgets
 let widgetMenu = new phosphorWidgets.Menu({ commands });

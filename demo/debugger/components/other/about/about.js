@@ -8,6 +8,9 @@ export default class AboutComponent extends Component {
       <div>
         <h1>About</h1>
         <div>
+          <strong>This is a Compiler Explorer fork of WasmBoy</strong>, maintained for displaying Game Boy compiler output.
+          <br />
+          <br />
           WasmBoy is a Game Boy / Game Boy Color Emulation Library, written for Web Assembly using{' '}
           <a href="https://github.com/AssemblyScript/assemblyscript" target="_blank">
             AssemblyScript
@@ -42,11 +45,24 @@ export default class AboutComponent extends Component {
           </a>
           , a full featured GB / GBC Emulator Progressive Web App.
         </div>
-        <h2>WasmBoy Links</h2>
+        <h2>Fork Information</h2>
+        <ul>
+          <li>
+            <a href="https://github.com/compiler-explorer/wasmboy" target="_blank">
+              Compiler Explorer WasmBoy Fork
+            </a>
+          </li>
+          <li>
+            <a href="https://godbolt.org" target="_blank">
+              Compiler Explorer
+            </a>
+          </li>
+        </ul>
+        <h2>Original WasmBoy Links</h2>
         <ul>
           <li>
             <a href="https://github.com/torch2424/wasmBoy" target="_blank">
-              Github Repo
+              Original Github Repo
             </a>
           </li>
           <li>
