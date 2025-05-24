@@ -100,8 +100,8 @@ export default class Disassembler extends Component {
   constructor() {
     super();
 
-    // 30 px rows
-    this.rowHeight = 30;
+    // 20 px rows (matches CSS)
+    this.rowHeight = 20;
     // 450 px total height
     this.height = 450;
 
