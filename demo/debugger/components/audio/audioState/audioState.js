@@ -8,6 +8,7 @@ export default class AudioState extends ValueTable {
     super();
 
     this.state.title = 'Audio';
+    this.state.className = 'audio-state';
   }
 
   intervalUpdate() {

@@ -8,6 +8,7 @@ export default class TimerState extends ValueTable {
     super();
 
     this.state.title = 'Timer';
+    this.state.className = 'timer-state';
   }
 
   intervalUpdate() {

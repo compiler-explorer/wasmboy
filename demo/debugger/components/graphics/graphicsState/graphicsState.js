@@ -8,6 +8,7 @@ export default class GraphicsState extends ValueTable {
     super();
 
     this.state.title = 'Graphics';
+    this.state.className = 'graphics-state';
   }
 
   intervalUpdate() {

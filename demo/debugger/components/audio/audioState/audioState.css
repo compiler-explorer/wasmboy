@@ -1,0 +1,25 @@
+/* Audio State styles - similar to CPU State */
+.audio-state .value-table {
+  font-size: 0.8em;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.audio-state .value-table th {
+  height: 20px;
+  padding: 2px 4px;
+  min-width: 100px;
+}
+
+.audio-state .value-table td {
+  min-height: 20px;
+  padding: 2px 4px;
+}
+
+.audio-state h1 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+
+.audio-state .value-table-container {
+  padding: 0.5em;
+}

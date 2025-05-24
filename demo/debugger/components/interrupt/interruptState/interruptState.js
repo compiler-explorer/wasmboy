@@ -8,6 +8,7 @@ export default class InterruptState extends ValueTable {
     super();
 
     this.state.title = 'Interrupt';
+    this.state.className = 'interrupt-state';
   }
 
   intervalUpdate() {
