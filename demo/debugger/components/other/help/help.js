@@ -20,12 +20,31 @@ export default class HelpComponent extends Component {
         </div>
         <h2>Hotkeys</h2>
         <div>
+          <h3>Emulator Controls:</h3>
           <ul>
             <li>
               <b>Left Trigger, Right Trigger, Q</b> - Double Speed
             </li>
             <li>
               <b>Special, Space</b> - Play / Pause
+            </li>
+          </ul>
+          <h3>Game Boy Controls:</h3>
+          <ul>
+            <li>
+              <b>Arrow Keys or WASD</b> - D-Pad (Up/Down/Left/Right)
+            </li>
+            <li>
+              <b>Z</b> - A Button
+            </li>
+            <li>
+              <b>X</b> - B Button
+            </li>
+            <li>
+              <b>Enter</b> - Start
+            </li>
+            <li>
+              <b>Shift</b> - Select
             </li>
           </ul>
         </div>
