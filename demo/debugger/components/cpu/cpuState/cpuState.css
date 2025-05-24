@@ -1,8 +1,4 @@
 /* Compact styling for CPU State */
-.cpu-state .value-table-container {
-  margin: 5px;
-}
-
 .cpu-state h1 {
   font-size: 1.2em;
   margin: 5px 0;
